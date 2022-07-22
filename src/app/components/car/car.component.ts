@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/car';
 
 @Component({
   selector: 'app-car',
@@ -40,7 +41,7 @@ export class CarComponent implements OnInit {
     description: 'gönül',
   };
 
-  cars = [this.car1, this.car2, this.car3, this.car4];
+  cars:Car[] = [this.car1, this.car2, this.car3, this.car4];
   constructor() { }
 
   ngOnInit(): void {
