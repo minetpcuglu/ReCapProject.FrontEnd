@@ -9,7 +9,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http'; //spi istegi
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CarDetailComponent } from './components/car-detail/car-detail.component'; //spi istegi
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'; //spi isteg
     CustomerComponent,
     CarComponent,
     RentalComponent,
-    NaviComponent
+    NaviComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
