@@ -1,6 +1,6 @@
 <li class="list-group-item">Markalar</li>
 
 
-<ul  *ngFor="let brand of brands" class="list-group">
+<ul (click)="setCurrentBrand(brand)"  *ngFor="let brand of brands" class="list-group">
     <li class="list-group-item">{{brand.brandName}}</li>
   </ul>

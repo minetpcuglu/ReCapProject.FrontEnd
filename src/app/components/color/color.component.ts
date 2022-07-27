@@ -24,5 +24,11 @@ this.colorService.getColors().subscribe(response=>{
   this.dataLoaded=true; //sıralı bir sekilde çalışması için
 })
   }
+
+setCurrentColor(color:Color){
+  console.log(color.colorName)
+}
+
+
 }
 

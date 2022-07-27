@@ -45,15 +45,19 @@
       <div class="col-md-3">
         <app-color></app-color>
       </div>
-      <div class="col-md-3">
-       <app-brand></app-brand>
+      
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+           
       </div>
-      <div class="col-md-6">
-           <app-car-detail></app-car-detail>
-      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <app-brand></app-brand>
+          </div>
     </div>
     <app-customer></app-customer>
     <app-rental></app-rental>
     <app-car></app-car>
-    <router-outlet></router-outlet>
+
   </div>

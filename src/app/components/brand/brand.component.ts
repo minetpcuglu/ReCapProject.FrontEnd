@@ -24,4 +24,9 @@ this.brandService.getBrands().subscribe(response=>{
   this.dataLoaded=true; //sıralı bir sekilde çalışması için
 })
   }
+setCurrentBrand(brand:Brand){
+  console.log(brand.brandName)
+}
+
+
 }
