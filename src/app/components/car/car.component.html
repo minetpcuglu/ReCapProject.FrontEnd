@@ -1,3 +1,5 @@
+<li class="list-group-item">Araba Listesi</li>
+
 
  <!-- //yukleniyor  -->
 <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
@@ -8,8 +10,8 @@
 <thead>
     <tr>
         <th>Id</th>
-        <th>Marka</th>
-        <th>Renk</th>
+        <th>Marka Id</th>
+        <th>Renk Id</th>
         <th>Model</th>
         <th>Fiyat</th>
         <th>Açıklama</th>
@@ -18,7 +20,7 @@
 
     <tr *ngFor="let car of cars">
         <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
+        <td>{{car.brandId}}</td>
         <td>{{car.colorId}}</td>
         <td>{{car.modelYear}}</td>
         <td>{{car.dailyPrice}}</td>

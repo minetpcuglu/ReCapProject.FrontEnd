@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container">
     <app-navi></app-navi>
     <div class="row">
@@ -37,4 +37,23 @@
 
     <router-outlet></router-outlet>
 </div>
+ -->
 
+ <div class="container">
+    <app-navi></app-navi>
+    <div class="row">
+      <div class="col-md-3">
+        <app-color></app-color>
+      </div>
+      <div class="col-md-3">
+       <app-brand></app-brand>
+      </div>
+      <div class="col-md-6">
+           <app-car-detail></app-car-detail>
+      </div>
+    </div>
+    <app-customer></app-customer>
+    <app-rental></app-rental>
+    <app-car></app-car>
+    <router-outlet></router-outlet>
+  </div>
