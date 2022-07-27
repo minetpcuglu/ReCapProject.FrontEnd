@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';  //apiye baglanma
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CarDetailResponseModel } from '../models/carDetailResponseModel';
+import { CarDetail } from '../models/carDetail';
+import { ListResponseModel } from '../models/ListResponseModel';
+
 
 
 @Injectable({
@@ -13,7 +15,7 @@ export class CarDetailService {
 
    //subscribe asycn calısma için kullanılır
    //observable : 
-   getCarDetails():Observable<CarDetailResponseModel>{
-   return this.httpClient.get<CarDetailResponseModel>(this.carUrl);
+   getCarDetails():Observable<ListResponseModel<CarDetail>>{
+   return this.httpClient.get<ListResponseModel<CarDetail>>(this.carUrl);
    }
   }
