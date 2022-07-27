@@ -29,5 +29,15 @@ setCurrentBrand(brand:Brand){
  this.currentBrand=brand; //tsconfig.json dan sonra bunu yapabilriz
 }
 
+//secme aktive -->
+getCurrentBrandActive(brand:Brand){
+  if(brand==this.currentBrand){
+    return "list-group-item active"
+  }
+  else{
+    return "list-group-item"
+  }
+}
+
 
 }

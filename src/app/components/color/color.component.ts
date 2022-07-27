@@ -30,6 +30,17 @@ setCurrentColor(color:Color){
   this.currentColor=color; //tsconfig.json dan sonra bunu yapabilriz
 }
 
+//secme aktive -->
+getCurrentColorActive(color:Color){
+if(color==this.currentColor){
+  return "list-group-item active"
+}
+else{
+  return "list-group-item"
+}
 
+
+
+}
 }
 

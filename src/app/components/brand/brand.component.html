@@ -2,7 +2,7 @@
 
 
 <ul (click)="setCurrentBrand(brand)"  *ngFor="let brand of brands" class="list-group">
-    <li class="list-group-item">{{brand.brandName}}</li>
+    <li [class]="getCurrentBrandActive(brand)">{{brand.brandName}}</li>  <!-- //secme aktive -->
   </ul>
 
 

@@ -2,7 +2,7 @@
 
 
 <ul (click)="setCurrentColor(color)"  *ngFor="let color of colors" class="list-group">
-    <li class="list-group-item">{{color.colorName}}</li>
+    <li [class]="getCurrentColorActive(color)">{{color.colorName}}</li>  <!-- //secme aktive img [src] ekleme zamanı -->  
   </ul>
 
   <h5 *ngIf="currentColor"> {{currentColor.colorName}} seçtiniz</h5>
