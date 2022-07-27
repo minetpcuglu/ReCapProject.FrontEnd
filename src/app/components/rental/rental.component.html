@@ -1,1 +1,27 @@
-<p>rental works!</p>
+<p>Kİralama Listesi</p>
+
+ <!-- //yukleniyor  -->
+ <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<table class="table table-bordered table-hover">
+<thead>
+    <tr>
+      
+        <th>Marka</th>
+        <th>Fiyat</th>
+        <th>Çalısan Adı Soyadı</th>
+        <th>Kiralayan Kişi</th>
+    </tr>
+</thead>
+
+    <tr *ngFor="let rental of rentals">
+        
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.dailyPrice}}</td>
+        <td>{{rental.firstName  + " " +  rental.lastName}}</td>
+        <td>{{rental.companyName}}</td>
+        
+    </tr>
+</table>
