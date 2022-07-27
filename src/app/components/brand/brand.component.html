@@ -4,3 +4,6 @@
 <ul (click)="setCurrentBrand(brand)"  *ngFor="let brand of brands" class="list-group">
     <li class="list-group-item">{{brand.brandName}}</li>
   </ul>
+
+
+  <h5 *ngIf="currentBrand"> {{currentBrand.brandName}} seçtiniz</h5>

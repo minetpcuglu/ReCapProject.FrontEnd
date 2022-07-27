@@ -10,6 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
 
   brands:Brand[] = [];
+  currentBrand:Brand;
   dataLoaded =false;
  
    constructor(private brandService:BrandService) { }  //bir service kullanma
@@ -25,7 +26,7 @@ this.brandService.getBrands().subscribe(response=>{
 })
   }
 setCurrentBrand(brand:Brand){
-  console.log(brand.brandName)
+ this.currentBrand=brand; //tsconfig.json dan sonra bunu yapabilriz
 }
 
 
