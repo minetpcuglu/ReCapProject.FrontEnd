@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -13,16 +14,61 @@ export class CarComponent implements OnInit {
   cars:Car[] = [];
   dataLoaded =false;
  
-   constructor(private carService:CarService) { }  //bir service kullanma
+   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }  //bir service kullanma
 
-  ngOnInit(): void {
-   this.getCars();
+//   ngOnInit(): void {
+//    this.activatedRoute.params.subscribe(params=>{
+//     if(params["colorId"])
+// {
+// this.getCarsByColor(params["colorId"])
+// }
+//  if(params["brandId"]){
+//   this.getCarsByBrand(params["brandId"])
+// }
+// else{
+//   this.getCars()
+// }
+
+// })
+ngOnInit(): void {
+  this.activatedRoute.params.subscribe((params) => {
+    if (params['brandId']) {
+      this.getCarsByBrand(params['brandId']);
+    } else if (params['colorId']) {
+      this.getCarsByColor(params['colorId']);
+    } else {
+      this.getCars();
     }
+  });
+}
+
+
+// ngOnInit(): void {
+//   this.getCars();
+//    }
+
 
   getCars(){  //subscribe olma nedir => asycn olarak calısmasını saglar
 this.carService.getCars().subscribe(response=>{
-  this.cars =response.data
+  this.cars = response.data
   this.dataLoaded=true; //sıralı bir sekilde çalışması için
 })
+  }
+
+
+getCarsByColor(colorId:number){  //subscribe olma nedir => asycn olarak calısmasını saglar
+  this.carService.getCarsByColor(colorId).subscribe(response=>{
+    this.cars =response.data
+    this.dataLoaded=true; //sıralı bir sekilde çalışması için
+  })
+}
+
+  getCarsByBrand(brandId:number){  //subscribe olma nedir => asycn olarak calısmasını saglar
+    this.carService.getCarsByBrand(brandId).subscribe(response=>{
+      this.cars =response.data
+      this.dataLoaded=true; //sıralı bir sekilde çalışması için
+    })
+  
+
   }
 }
