@@ -38,6 +38,15 @@ if(color==this.currentColor){
 else{
   return "list-group-item"
 }
+}
+//secme aktive -->
+getCurrentNullColorActive(){
+  if(!this.currentColor){
+    return "list-group-item active"
+  }
+  else{
+    return "list-group-item "
+  }
 
 
 

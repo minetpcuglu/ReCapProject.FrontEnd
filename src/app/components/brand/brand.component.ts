@@ -39,5 +39,14 @@ getCurrentBrandActive(brand:Brand){
   }
 }
 
+//secme aktive -->
+getCurrentNullBrandActive(){
+  if(!this.currentBrand){
+    return "list-group-item active"
+  }
+  else{
+    return "list-group-item "
+  }
+}
 
 }

@@ -1,12 +1,10 @@
 <li class="list-group-item">Markalar</li>
-
-
-<ul (click)="setCurrentBrand(brand)"  
+<ul class="list-group">
+<li  routerLink="/cars" class="list-group" [class]="getCurrentNullBrandActive()"> Tüm Markalar</li>
+<li (click)="setCurrentBrand(brand)"  
  routerLink= "/cars/brand/{{brand.brandId}}"    
-*ngFor="let brand of brands" class="list-group">
-    <li [class]="getCurrentBrandActive(brand)">
-      {{brand.brandName}}</li>  <!-- //secme aktive -->
-  </ul>
-
-
-  <h5 *ngIf="currentBrand"> {{currentBrand.brandName}} seçtiniz</h5>
+*ngFor="let brand of brands" class="list-group" [class]="getCurrentBrandActive(brand)">
+      {{brand.brandName}}  <!-- //secme aktive -->
+</li>
+</ul>
+<h5 *ngIf="currentBrand"> {{currentBrand.brandName}} seçtiniz</h5>

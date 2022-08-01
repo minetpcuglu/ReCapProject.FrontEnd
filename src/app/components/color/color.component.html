@@ -1,11 +1,12 @@
 <li class="list-group-item">Renkler</li>
 
-
-<ul (click)="setCurrentColor(color)"  
-routerLink= "/cars/color/{{color.colorId}}"
-*ngFor="let color of colors" class="list-group">
-    <li [class]="getCurrentColorActive(color)">
-      {{color.colorName}}</li>  <!-- //secme aktive img [src] ekleme zamanı -->  
+<ul class="list-group">
+  <li  routerLink="/cars" class="list-group" [class]="getCurrentNullColorActive()"> Tüm Renkler</li>
+  <li (click)="setCurrentColor(color)"  
+   routerLink= "/cars/color/{{color.colorId}}"    
+  *ngFor="let color of colors" class="list-group" [class]="getCurrentColorActive(color)">
+        {{color.colorName}}  <!-- //secme aktive -->
+  </li>
   </ul>
 
   <h5 *ngIf="currentColor"> {{currentColor.colorName}} seçtiniz</h5>
