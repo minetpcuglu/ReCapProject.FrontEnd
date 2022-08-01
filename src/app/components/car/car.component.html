@@ -1,4 +1,4 @@
-<li class="list-group-item">Araba Listesi</li>
+
 
 
  <!-- //yukleniyor  -->
@@ -6,6 +6,17 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Araç Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Marka Giriniz">
+  </div>
+
+  <div>
+    <!-- //inputa girilen bilgiyi okuma -->
+  </div>
+
+
+  <div><li class="list-group-item">Araba Listesi</li></div>
 <table class="table table-bordered table-hover">
 <thead>
     <tr>

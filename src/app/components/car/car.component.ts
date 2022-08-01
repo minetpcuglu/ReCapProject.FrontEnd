@@ -12,24 +12,12 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent implements OnInit {
 
   cars:Car[] = [];
+  filterText=""; //arama filtresi
   dataLoaded =false;
  
    constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }  //bir service kullanma
 
-//   ngOnInit(): void {
-//    this.activatedRoute.params.subscribe(params=>{
-//     if(params["colorId"])
-// {
-// this.getCarsByColor(params["colorId"])
-// }
-//  if(params["brandId"]){
-//   this.getCarsByBrand(params["brandId"])
-// }
-// else{
-//   this.getCars()
-// }
 
-// })
 ngOnInit(): void {
   this.activatedRoute.params.subscribe((params) => {
     if (params['brandId']) {
@@ -41,11 +29,6 @@ ngOnInit(): void {
     }
   });
 }
-
-
-// ngOnInit(): void {
-//   this.getCars();
-//    }
 
 
   getCars(){  //subscribe olma nedir => asycn olarak calısmasını saglar
