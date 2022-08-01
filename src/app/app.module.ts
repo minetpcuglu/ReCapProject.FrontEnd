@@ -12,6 +12,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,13 +25,14 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
     RentalComponent,
     NaviComponent,
     CarDetailComponent,
-    VatAddedPipe,
+    VatAddedPipe
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //api
+    HttpClientModule ,//api
+    FormsModule  //filter 
   ],
   providers: [],
   bootstrap: [AppComponent]
