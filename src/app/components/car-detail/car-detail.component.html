@@ -1,5 +1,14 @@
 <li class="list-group-item">Araba Detay Listesi</li>
 
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Araç Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="exampleFormControlInput1" placeholder="Marka Giriniz">
+  </div>
+
+  <div  *ngIf="filterText.length>2" class="alert alert-primary">
+    <!-- //inputa girilen bilgiyi okuma -->
+    {{filterText}} aradınız
+  </div>
 
  <!-- //yukleniyor  -->
  <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
@@ -14,14 +23,18 @@
         <th>Renk</th>
         <th>Fiyat</th>
         <th>Açıklama</th>
+        <th>Kirala</th>
+      
     </tr>
 </thead>
-
-    <tr *ngFor="let carDetail of carDetails">
+<tbody>
+    <tr *ngFor="let carDetail of carDetails | filterDetailPipe:filterText">
         <td>{{carDetail.carId}}</td>
         <td>{{carDetail.brandName}}</td>
         <td>{{carDetail.colorName}}</td>
         <td>{{carDetail.dailyPrice}}</td>
         <td>{{carDetail.description}}</td>
+        <td> <button (click)="addToCart(carDetail)" type="button" class="btn btn-success">Araç Kirala</button></td>
     </tr>
+</tbody>
 </table>

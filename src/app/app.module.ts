@@ -14,6 +14,9 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { FilterDetailPipePipe } from './pipes/filter-detail-pipe.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,14 +30,19 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     NaviComponent,
     CarDetailComponent,
     VatAddedPipe,
-    FilterPipePipe
+    FilterPipePipe,
+    FilterDetailPipePipe
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule ,//api
-    FormsModule  //filter 
+    FormsModule,  //filter 
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }) //rootan itibaren kullanılabilir hale getir
   ],
   providers: [],
   bootstrap: [AppComponent]
